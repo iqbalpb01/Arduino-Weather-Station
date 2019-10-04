@@ -53,14 +53,17 @@ void setup() {
  pinMode(buttonPin,INPUT_PULLUP);
  
  dht.begin();                        // this command initializes the dht module
-
+ Serial.begin(9600);                 //innitiate Serial Communication
  
 
 }
 
 void loop() {
  
-  
+  Serial.print("humidity:",h);    //printing humidity on serial monnitor
+  Serial.print("temprature:",t);  //printing temprature on serial monnitor
+
+
   oled.clearDisplay();
   
   float h = dht.readHumidity();
